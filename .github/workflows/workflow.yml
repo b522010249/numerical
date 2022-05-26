@@ -1,0 +1,63 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+      - name: npm install
+        working-directory: ./frontend
+        run : npm install -g npm@8.11.0
+
+      - name: npm run build --if-present
+        working-directory: ./frontend
+        run : npm run build
+
+      # - name: npm test
+      #   working-directory: ./frontend
+      #   run : npm test
+
+      # - name: Set up QEMU
+      #   uses: docker/setup-qemu-action@v1
+      
+      # - name: Set up Docker Buildx
+      #   uses: docker/setup-buildx-action@v1
+
+      # - name: Logining in Docker hub
+      #   uses: docker/login-action@v1
+      #   with:
+      #     username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      #     password: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}      
+
+      # - name: Build and push
+      #   uses: docker/build-push-action@v2.10.0
+      #   with:
+      #     file: ./Dockerfile
+      #     push: true
+      #     tags: ${{ secrets.DOCKER_HUB_USERNAME }}/numerical:last
+          
+
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+      - name: npm install
+        working-directory: ./backend
+        run : npm install
