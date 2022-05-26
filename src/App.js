@@ -5,9 +5,9 @@ import { Route, Link, BrowserRouter, Routes } from "react-router-dom";
 
 //Root of Equation
 import Bisection from "./components/RoE/Bisection.js";
-import FalsePosition from "./components/RoE/FalsePosition.js";
-import NewtonRaphson from "./components/RoE/NewtonRaphson.js";
-import OnePointIteration from "./components/RoE/OnePointIteration.js";
+// import FalsePosition from "./components/RoE/FalsePosition.js";
+// import NewtonRaphson from "./components/RoE/NewtonRaphson.js";
+// import OnePointIteration from "./components/RoE/OnePointIteration.js";
 
 // We import all the components we need in our app
 import axios from 'axios'
