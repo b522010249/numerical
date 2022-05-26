@@ -47,15 +47,7 @@ jobs:
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/numerical:last
           
 
-  # backend:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v3
-  #     - name: Use Node.js 16.x
-  #       uses: actions/setup-node@v3
-  #       with:
-  #         node-version: 16.x
-  #     - name: npm install
-  #       working-directory: ./backend
-  #       run : npm install
+  backend:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Step 1"
