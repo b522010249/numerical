@@ -17,17 +17,15 @@ jobs:
         uses: actions/checkout@v3
       - name: Use Node.js 16.x
         uses: actions/setup-node@v3
+
       - name: npm install
-        working-directory: ./frontend
-        run : npm install -g npm@8.11.0
+        run : npm install
 
       - name: npm run build --if-present
-        working-directory: ./frontend
         run : npm run build
 
-      # - name: npm test
-      #   working-directory: ./frontend
-      #   run : npm test
+      - name: npm test
+        run : npm test
 
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v1
@@ -49,15 +47,15 @@ jobs:
       #     tags: ${{ secrets.DOCKER_HUB_USERNAME }}/numerical:last
           
 
-  backend:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.x
-      - name: npm install
-        working-directory: ./backend
-        run : npm install
+  # backend:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
+  #     - name: Use Node.js 16.x
+  #       uses: actions/setup-node@v3
+  #       with:
+  #         node-version: 16.x
+  #     - name: npm install
+  #       working-directory: ./backend
+  #       run : npm install
