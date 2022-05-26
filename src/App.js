@@ -11,7 +11,7 @@ import Bisection from "./components/RoE/Bisection.js";
 
 // We import all the components we need in our app
 import axios from 'axios'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/bootstrap.min.css';
 
 const App = () => {
    //creating IP state
