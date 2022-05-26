@@ -64,9 +64,9 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<Bisection />} />
           <Route path="/Bisection" element={<Bisection />} />
-          <Route path="/FalsePosition" element={<FalsePosition />} />
+          {/* <Route path="/FalsePosition" element={<FalsePosition />} />
           <Route path="/OnePointIteration" element={<OnePointIteration />} />
-          <Route path="/NewtonRaphson" element={<NewtonRaphson />} />
+          <Route path="/NewtonRaphson" element={<NewtonRaphson />} /> */}
         </Routes>
       </div>
     </div>
