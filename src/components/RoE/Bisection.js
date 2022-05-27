@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Button, Col, Container, Form , Row, Table } from 'react-bootstrap'
 
-import { create, all } from 'mathjs'
+import { create, all } from 'mathjs/lib/esm/number';
 import { Line, LineChart, XAxis ,Tooltip, CartesianGrid, YAxis,ResponsiveContainer } from 'recharts'
 const config = {}
 const math = create(all, config)
