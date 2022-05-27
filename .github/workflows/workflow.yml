@@ -45,10 +45,15 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_HUB_USERNAME }}/numerical:last
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: build # The folder the action should deploy.          
           
 
   backend:
-    need: [frontend]
     runs-on: ubuntu-latest
     steps:
       - run: echo "Step 1"
