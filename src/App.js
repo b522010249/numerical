@@ -11,7 +11,7 @@ import Bisection from "./components/RoE/Bisection.js";
 // import OnePointIteration from "./components/RoE/OnePointIteration.js";
 
 // We import all the components we need in our app
-import axios from 'axios'
+import { Axios } from 'axios';
 import './css/bootstrap.min.css';
 
 const App = () => {
@@ -20,7 +20,7 @@ const App = () => {
 
    //creating function to load ip address from the API
    const getData = async () => {
-     const res = await axios.get('https://api.ipify.org/?format=json')
+     const res = await Axios.get('https://api.ipify.org/?format=json')
      console.log(res.data);
      setIP(res.data.ip)
    }
