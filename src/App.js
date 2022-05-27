@@ -25,11 +25,11 @@ const App = () => {
   //    setIP(res.data.ip)
   //  }
    
-   useEffect( () => {
-     //passing getData method to the lifecycle method
-     getData()
+  //  useEffect( () => {
+  //    //passing getData method to the lifecycle method
+  //    getData()
  
-   }, [])
+  //  }, [])
 
   return (
     <BrowserRouter>
